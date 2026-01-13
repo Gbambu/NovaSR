@@ -24,7 +24,7 @@ class FastSR:
         }
         if ckpt_path is None:
             from huggingface_hub import hf_hub_download
-            ckpt_path = hf_hub_download(repo_id="YatharthS/NovaSR", filename="pytorch_model.bin", local_dir=".")
+            ckpt_path = hf_hub_download(repo_id="YatharthS/NovaSR", filename="pytorch_model_v1.bin", local_dir=".")
 
         self.model = self._load_model(ckpt_path).half().eval()
 
