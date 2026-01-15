@@ -1,11 +1,12 @@
 import torch
 import os
-import librosa
+import torchaudio
 from .speechsr import SynthesizerTrn
 from torch.nn.utils import weight_norm
 
 class FastSR:
-    def __init__(self, ckpt_path=None):
+    def __init__(self, ckpt_path=None, half=True):
+        
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         self.hps = {
             "train": {
@@ -27,7 +28,11 @@ class FastSR:
             model_path = snapshot_download("YatharthS/NovaSR")
             ckpt_path = f"{model_path}/pytorch_model_v1.bin"
 
-        self.model = self._load_model(ckpt_path).half().eval()
+        self.half = False
+        self.model = self._load_model(ckpt_path).eval().float()
+        if half == True:
+            self.half = True
+            self.model.half()
 
 
     def _load_model(self, ckpt_path):
@@ -44,8 +49,11 @@ class FastSR:
         return model
 
     def load_audio(self, audio_file):
-        y, sr = librosa.load(audio_file, sr=16000) ## resample to 16khz sr
-        lowres_wav = torch.from_numpy(y).unsqueeze(0).half().unsqueeze(1).to(self.device)
+        audio, sample_rate = torchaudio.load(audio_file)
+        audio = audio[:1, :]
+        lowres_wav = torchaudio.functional.resample(audio, sample_rate, 16000, resampling_method="kaiser_window").unsqueeze(1).to(self.device)
+        if self.half == True:
+            lowres_wav = lowres_wav.half()
         return lowres_wav
         
     def infer(self, lowres_wav):
